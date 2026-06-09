@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* === KERGOAT COLORS === */
+  --color-deep-navy: #0B124A;
+  --color-systemic-orange: #FF6B00;
+  --color-soft-apricot: #FEF1E4;
+  --color-graphite: #353535;
+  --color-pure-white: #FFFFFF;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-background: #fbf9f8;
+  --color-surface: #fbf9f8;
+  --color-surface-dim: #dcd9d9;
+  --color-surface-bright: #fbf9f8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3f2;
+  --color-surface-container: #f0eded;
+  --color-surface-container-high: #eae8e7;
+  --color-surface-container-highest: #e4e2e1;
+  --color-surface-variant: #e4e2e1;
+  --color-on-surface: #1b1c1c;
+  --color-on-surface-variant: #46464f;
+  --color-on-background: #1b1c1c;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #0e144c;
+  --color-on-primary-container: #797fbb;
+  --color-primary-fixed: #dfe0ff;
+  --color-primary-fixed-dim: #bcc2ff;
+  --color-on-primary-fixed: #0e144c;
+  --color-on-primary-fixed-variant: #3b427a;
+  --color-inverse-primary: #bcc2ff;
+  --color-surface-tint: #535a93;
+
+  --color-secondary: #a04100;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fe6b00;
+  --color-on-secondary-container: #572000;
+  --color-secondary-fixed: #ffdbcc;
+  --color-secondary-fixed-dim: #ffb693;
+  --color-on-secondary-fixed: #351000;
+  --color-on-secondary-fixed-variant: #7a3000;
+
+  --color-tertiary: #000000;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #201b13;
+  --color-on-tertiary-container: #8c8277;
+  --color-tertiary-fixed: #ede0d4;
+  --color-tertiary-fixed-dim: #d0c5b8;
+  --color-on-tertiary-fixed: #201b13;
+  --color-on-tertiary-fixed-variant: #4d463c;
+
+  --color-outline: #777680;
+  --color-outline-variant: #c7c5d1;
+  --color-inverse-surface: #303030;
+  --color-inverse-on-surface: #f3f0f0;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* === KERGOAT TYPOGRAPHY === */
+  --font-sans: 'Hanken Grotesk', sans-serif;
+
+  /* === KERGOAT BORDER RADIUS === */
+  --radius-sm: 0.125rem;
+  --radius: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans);
+}
+
+/* === LIQUID GLASS === */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.liquid-glass:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+.liquid-glass-primary {
+  background: rgba(255, 107, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(255, 107, 0, 0.25);
+  transition: all 0.3s ease;
+}
+.liquid-glass-primary:hover {
+  background: rgba(255, 107, 0, 1);
+  box-shadow: 0 12px 40px rgba(255, 107, 0, 0.35);
+}
+
+/* === MATERIAL SYMBOLS === */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* === METHOD LINE (vertical connector) === */
+.method-line::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, #FF6B00, transparent);
+  transform: translateX(-50%);
 }
