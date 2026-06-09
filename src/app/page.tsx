@@ -91,16 +91,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Propuesta de valor — navy medio */}
-      <section className="py-24 md:py-32" style={{ background: '#0b1240' }}>
+      {/* Propuesta de valor — blanco roto */}
+      <section className="py-24 md:py-32" style={{ background: '#fbf9f8' }}>
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
           <AnimateOnScroll direction="up">
             <div className="text-center mb-16 max-w-3xl mx-auto">
               <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Por Qué Kergoat</span>
-              <h2 className="text-4xl font-semibold text-white mb-6">
+              <h2 className="text-4xl font-semibold text-deep-navy mb-6">
                 Una organización sin estructura es un grupo de personas trabajando duro en direcciones opuestas
               </h2>
-              <p className="text-base text-white/60 leading-relaxed">
+              <p className="text-base text-on-surface-variant leading-relaxed">
                 Nuestra metodología transforma esa energía dispersa en un sistema escalable donde cada persona conoce su rol, sus procesos y su impacto.
               </p>
             </div>
@@ -113,10 +113,10 @@ export default function HomePage() {
               { icon: 'trending_up', title: 'Escalamiento Sostenible', desc: 'Una vez consolidada la estructura, activamos el crecimiento con procesos que no colapsan bajo presión.', delay: 200 },
             ].map(({ icon, title, desc, delay }) => (
               <AnimateOnScroll key={title} direction="up" delay={delay}>
-                <div className="p-10 rounded-2xl border border-white/10 hover:border-systemic-orange/40 transition-all hover:-translate-y-1 h-full" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                <div className="bg-white p-10 rounded-2xl border border-deep-navy/10 hover:border-systemic-orange/40 hover:shadow-lg transition-all hover:-translate-y-1 h-full">
                   <span className="material-symbols-outlined text-systemic-orange text-4xl mb-6 block">{icon}</span>
-                  <h3 className="text-xl font-semibold text-white mb-4">{title}</h3>
-                  <p className="text-sm text-white/60 leading-relaxed">{desc}</p>
+                  <h3 className="text-xl font-semibold text-deep-navy mb-4">{title}</h3>
+                  <p className="text-sm text-on-surface-variant leading-relaxed">{desc}</p>
                 </div>
               </AnimateOnScroll>
             ))}

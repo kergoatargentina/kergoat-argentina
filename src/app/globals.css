@@ -8,16 +8,20 @@
   --color-graphite: #353535;
   --color-pure-white: #FFFFFF;
 
-  /* Dark Navy theme */
-  --color-background: #080d2e;
-  --color-surface: #080d2e;
-  --color-surface-dim: #060a24;
-  --color-surface-bright: #0d1545;
-  --color-surface-container-lowest: #050820;
-  --color-surface-container-low: #0b1240;
-  --color-surface-container: #0e1650;
-  --color-surface-container-high: #111a5a;
-  --color-surface-container-highest: #151f65;
+  --color-background: #fbf9f8;
+  --color-surface: #fbf9f8;
+  --color-surface-dim: #dcd9d9;
+  --color-surface-bright: #fbf9f8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3f2;
+  --color-surface-container: #f0eded;
+  --color-surface-container-high: #eae8e7;
+  --color-surface-container-highest: #e4e2e1;
+
+  /* Navy palette for dark sections */
+  --color-navy-deep: #080d2e;
+  --color-navy-mid: #0b1240;
+  --color-navy-light: #0e1650;
   --color-surface-variant: #e4e2e1;
   --color-on-surface: #1b1c1c;
   --color-on-surface-variant: #46464f;
@@ -77,7 +81,7 @@
 
 body {
   background-color: var(--color-background);
-  color: #f0f0f5;
+  color: var(--color-on-surface);
   font-family: var(--font-sans);
 }
 
