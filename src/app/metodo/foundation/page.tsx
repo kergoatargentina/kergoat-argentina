@@ -86,8 +86,8 @@ export default function FoundationPage() {
             <div className="col-span-12 md:col-span-4 bg-deep-navy p-10 rounded-xl text-pure-white flex flex-col justify-between">
               <span className="material-symbols-outlined text-systemic-orange text-4xl mb-8">analytics</span>
               <div>
-                <h3 className="text-2xl font-semibold mb-2">Métricas de Salud</h3>
-                <p className="text-base text-surface-variant/80">Monitoreo constante del orden organizacional y la carga operativa.</p>
+                <h3 className="text-2xl font-semibold text-white mb-2">Métricas de Salud</h3>
+                <p className="text-base text-white/70">Monitoreo constante del orden organizacional y la carga operativa.</p>
               </div>
             </div>
 
@@ -178,7 +178,7 @@ export default function FoundationPage() {
                 ].map(({ title, desc }) => (
                   <div key={title}>
                     <h5 className="text-lg font-bold text-systemic-orange mb-2">{title}</h5>
-                    <p className="text-base text-surface-variant/80">{desc}</p>
+                    <p className="text-base text-white/70">{desc}</p>
                   </div>
                 ))}
               </div>

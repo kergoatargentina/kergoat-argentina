@@ -58,19 +58,19 @@ export default function HomePage() {
                     <div className="text-4xl font-bold text-systemic-orange mb-2">
                       <CountUp end={120} suffix="+" />
                     </div>
-                    <div className="text-xs font-bold tracking-widest uppercase text-white/50">Empresas</div>
+                    <div className="text-xs font-bold tracking-widest uppercase text-white/70">Empresas</div>
                   </div>
                   <div className="border-x border-white/10 px-4">
                     <div className="text-4xl font-bold text-systemic-orange mb-2">
                       <CountUp end={90} />
                     </div>
-                    <div className="text-xs font-bold tracking-widest uppercase text-white/50">Días al resultado</div>
+                    <div className="text-xs font-bold tracking-widest uppercase text-white/70">Días al resultado</div>
                   </div>
                   <div>
                     <div className="text-4xl font-bold text-systemic-orange mb-2">
                       <CountUp end={3.2} suffix="x" decimals={1} />
                     </div>
-                    <div className="text-xs font-bold tracking-widest uppercase text-white/50">ROI promedio</div>
+                    <div className="text-xs font-bold tracking-widest uppercase text-white/70">ROI promedio</div>
                   </div>
                 </div>
               </div>
@@ -172,17 +172,17 @@ export default function HomePage() {
                 </div>
                 <div>
                   <div className="font-bold text-white">Carlos Rodriguez</div>
-                  <div className="text-xs text-white/50 uppercase tracking-widest">CEO, Distribuidora Austral</div>
+                  <div className="text-xs text-white/70 uppercase tracking-widest">CEO, Distribuidora Austral</div>
                 </div>
               </div>
               <div className="mt-8 grid grid-cols-2 gap-6 border-t border-white/10 pt-8">
                 <div>
                   <div className="text-3xl font-bold text-systemic-orange">+<CountUp end={45} suffix="%" /></div>
-                  <div className="text-xs text-white/50 uppercase tracking-widest mt-1">Eficiencia</div>
+                  <div className="text-xs text-white/70 uppercase tracking-widest mt-1">Eficiencia</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-systemic-orange"><CountUp end={90} /> días</div>
-                  <div className="text-xs text-white/50 uppercase tracking-widest mt-1">Implementación</div>
+                  <div className="text-xs text-white/70 uppercase tracking-widest mt-1">Implementación</div>
                 </div>
               </div>
             </div>
