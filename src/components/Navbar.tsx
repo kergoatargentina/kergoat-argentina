@@ -41,12 +41,15 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link
-            href="#"
-            className="hidden lg:block text-sm font-medium text-deep-navy hover:text-systemic-orange transition-colors"
+          <a
+            href="https://kergoattrading.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:block text-sm font-medium text-deep-navy hover:text-systemic-orange transition-colors flex items-center gap-1"
           >
+            <span className="material-symbols-outlined text-base">public</span>
             Kergoat España
-          </Link>
+          </a>
           <Link
             href="/contacto"
             className="liquid-glass-primary text-pure-white px-6 py-3 rounded-xl font-bold text-sm"

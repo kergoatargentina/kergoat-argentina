@@ -33,10 +33,10 @@ export default function Footer() {
             <h5 className="text-xs font-bold tracking-widest uppercase text-systemic-orange mb-6">Global</h5>
             <ul className="space-y-4 text-sm">
               <li>
-                <Link href="#" className="text-white/70 hover:text-systemic-orange transition-colors flex items-center gap-2">
+                <a href="https://kergoattrading.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-systemic-orange transition-colors flex items-center gap-2">
                   <span className="material-symbols-outlined text-base">public</span>
                   K-Trading España
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
