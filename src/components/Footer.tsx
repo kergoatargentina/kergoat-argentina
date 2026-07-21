@@ -1,12 +1,12 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
     <footer className="bg-deep-navy text-pure-white">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-12 flex flex-col md:flex-row justify-between items-start">
         <div className="mb-10 md:mb-0">
-          <div className="text-2xl font-bold mb-1">Kergoat Argentina</div>
-          <p className="text-xs font-bold tracking-widest uppercase text-systemic-orange mb-4">Business Consultancy & Trading</p>
+          <Image src="/logo-blanco.svg" alt="Kergoat Argentina" width={200} height={88} className="mb-4" />
           <p className="text-sm text-white/70 max-w-xs leading-relaxed">
             Transformando organizaciones a través del orden sistémico y la metodología de alto rendimiento.
           </p>

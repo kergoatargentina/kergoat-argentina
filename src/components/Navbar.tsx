@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 const links = [
   { href: '/', label: 'Inicio' },
@@ -23,8 +24,8 @@ export default function Navbar() {
     </div>
     <nav className="sticky top-0 z-50 transition-all duration-300 border-b border-white/10" style={{ background: 'rgba(8,13,46,0.92)', backdropFilter: 'blur(16px)' }}>
       <div className="flex justify-between items-center w-full px-6 md:px-12 max-w-[1280px] mx-auto h-20">
-        <Link href="/" className="text-2xl font-semibold text-white">
-          Kergoat Argentina
+        <Link href="/">
+          <Image src="/logo-blanco.svg" alt="Kergoat Argentina" width={180} height={79} priority />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
