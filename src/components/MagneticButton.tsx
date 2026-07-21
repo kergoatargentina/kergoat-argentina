@@ -31,7 +31,7 @@ export default function MagneticButton({ children, className = '', strength = 0.
   return (
     <div
       ref={ref}
-      className={`transition-transform duration-500 ease-out ${className}`}
+      className={`w-fit transition-transform duration-500 ease-out ${className}`}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
       data-magnetic

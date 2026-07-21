@@ -58,10 +58,10 @@ export default function Navbar() {
             <span className="material-symbols-outlined text-base">public</span>
             Kergoat España
           </a>
-          <MagneticButton>
+          <MagneticButton className="shrink-0">
             <Link
               href="/contacto"
-              className="liquid-glass-primary text-white px-6 py-3 rounded-xl font-bold text-sm block"
+              className="liquid-glass-primary text-white px-5 py-2.5 md:px-6 md:py-3 rounded-xl font-bold text-sm whitespace-nowrap block"
             >
               Agendar Asesoría
             </Link>

@@ -72,7 +72,7 @@ export default function HomePage() {
                     <div className="text-4xl font-bold text-systemic-orange mb-2">
                       <CountUp end={90} />
                     </div>
-                    <div className="text-xs font-bold tracking-widest uppercase text-white/70">Días al resultado</div>
+                    <div className="text-xs font-bold tracking-widest uppercase text-white/70">Días</div>
                   </div>
                   <div>
                     <div className="text-4xl font-bold text-systemic-orange mb-2">
