@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import MagneticButton from './MagneticButton'
-import { NAVY_GRADIENT } from '@/lib/theme'
 
 const links = [
   { href: '/', label: 'Inicio' },
@@ -19,12 +18,12 @@ export default function Navbar() {
 
   return (
     <>
-    {/* Barra de ubicación */}
-    <div className="border-b border-white/5 py-1.5 px-6 md:px-12 flex justify-end items-center gap-2" style={{ background: NAVY_GRADIENT }}>
-      <span className="material-symbols-outlined text-systemic-orange text-[13px]">location_on</span>
-      <span className="text-[10px] font-bold tracking-[0.25em] text-systemic-orange uppercase">Rosario — Valencia</span>
-    </div>
-    <nav className="sticky top-0 z-50 transition-all duration-300 border-b border-white/10" style={{ background: 'linear-gradient(160deg, rgba(5,9,31,0.95) 0%, rgba(11,18,74,0.95) 45%, rgba(13,22,96,0.95) 100%)', backdropFilter: 'blur(16px)' }}>
+    <nav className="sticky top-0 z-50 border-b border-white/10" style={{ background: 'rgba(6, 10, 40, 0.82)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', boxShadow: '0 1px 0 rgba(255,255,255,0.08), inset 0 1px 0 rgba(255,255,255,0.06)' }}>
+      {/* Barra de ubicación */}
+      <div className="border-b border-white/5 py-1.5 px-6 md:px-12 flex justify-end items-center gap-2">
+        <span className="material-symbols-outlined text-systemic-orange text-[13px]">location_on</span>
+        <span className="text-[10px] font-bold tracking-[0.25em] text-systemic-orange uppercase">Rosario — Valencia</span>
+      </div>
       <div className="flex justify-between items-center w-full px-6 md:px-12 max-w-[1280px] mx-auto h-20">
         <Link href="/">
           <Image src="/logo-blanco.svg" alt="Kergoat Argentina" width={180} height={79} priority />
