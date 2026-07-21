@@ -112,6 +112,13 @@ body {
   box-shadow: 0 12px 40px rgba(255, 107, 0, 0.35);
 }
 
+/* === CUSTOM CURSOR — solo desktop === */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
 /* === MATERIAL SYMBOLS === */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;

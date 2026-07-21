@@ -2,6 +2,7 @@ import PublicLayout from '@/components/PublicLayout'
 import AnimateOnScroll from '@/components/AnimateOnScroll'
 import CountUp from '@/components/CountUp'
 import Link from 'next/link'
+import MagneticButton from '@/components/MagneticButton'
 
 const obstaculos = [
   { num: '01', icon: 'explore', title: 'Falta de dirección estratégica' },
@@ -42,13 +43,17 @@ export default function HomePage() {
 
             <AnimateOnScroll direction="up" delay={300}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/metodo" className="liquid-glass-primary text-white px-10 py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
-                  Conocé nuestros programas
-                  <span className="material-symbols-outlined text-base">arrow_forward</span>
-                </Link>
-                <Link href="/contacto" className="bg-transparent border-2 border-white/30 text-white px-10 py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:border-systemic-orange hover:text-systemic-orange transition-all duration-300">
-                  Iniciar transformación
-                </Link>
+                <MagneticButton>
+                  <Link href="/metodo" className="liquid-glass-primary text-white px-10 py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+                    Conocé nuestros programas
+                    <span className="material-symbols-outlined text-base">arrow_forward</span>
+                  </Link>
+                </MagneticButton>
+                <MagneticButton strength={0.25}>
+                  <Link href="/contacto" className="bg-transparent border-2 border-white/30 text-white px-10 py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:border-systemic-orange hover:text-systemic-orange transition-all duration-300">
+                    Iniciar transformación
+                  </Link>
+                </MagneticButton>
               </div>
             </AnimateOnScroll>
           </div>
@@ -225,13 +230,15 @@ export default function HomePage() {
             <p className="text-base text-white/80 mb-10 max-w-xl mx-auto">
               El primer paso es un diagnóstico sin costo donde analizamos tu estructura y te mostramos el camino.
             </p>
-            <Link
-              href="/contacto"
-              className="inline-flex items-center gap-3 bg-white text-systemic-orange px-12 py-5 font-bold text-sm hover:bg-deep-navy hover:text-white transition-all duration-300"
-            >
-              INICIAR TRANSFORMACIÓN
-              <span className="material-symbols-outlined">arrow_forward</span>
-            </Link>
+            <MagneticButton className="inline-block">
+              <Link
+                href="/contacto"
+                className="inline-flex items-center gap-3 bg-white text-systemic-orange px-12 py-5 font-bold text-sm hover:bg-deep-navy hover:text-white transition-all duration-300"
+              >
+                INICIAR TRANSFORMACIÓN
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </Link>
+            </MagneticButton>
           </div>
         </AnimateOnScroll>
       </section>

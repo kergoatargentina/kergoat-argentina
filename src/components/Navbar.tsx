@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
+import MagneticButton from './MagneticButton'
 
 const links = [
   { href: '/', label: 'Inicio' },
@@ -57,12 +58,14 @@ export default function Navbar() {
             <span className="material-symbols-outlined text-base">public</span>
             Kergoat España
           </a>
-          <Link
-            href="/contacto"
-            className="liquid-glass-primary text-white px-6 py-3 rounded-xl font-bold text-sm"
-          >
-            Agendar Asesoría
-          </Link>
+          <MagneticButton>
+            <Link
+              href="/contacto"
+              className="liquid-glass-primary text-white px-6 py-3 rounded-xl font-bold text-sm block"
+            >
+              Agendar Asesoría
+            </Link>
+          </MagneticButton>
         </div>
       </div>
     </nav>

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Hanken_Grotesk } from 'next/font/google'
 import './globals.css'
+import ScrollProgress from '@/components/ScrollProgress'
+import CustomCursor from '@/components/CustomCursor'
 
 const hanken = Hanken_Grotesk({
   subsets: ['latin'],
@@ -22,7 +24,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col cursor-none">
+        <ScrollProgress />
+        <CustomCursor />
+        {children}
+      </body>
     </html>
   )
 }
