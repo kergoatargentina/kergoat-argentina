@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation'
 
 const links = [
   { href: '/', label: 'Inicio' },
-  { href: '/metodo', label: 'Método Kergoat' },
-  { href: '/metodo/foundation', label: 'Niveles' },
+  { href: '/nosotros', label: 'Nosotros' },
+  { href: '/metodo', label: 'Método' },
   { href: '/casos', label: 'Casos de Éxito' },
   { href: '/contacto', label: 'Contacto' },
 ]
@@ -15,6 +15,12 @@ export default function Navbar() {
   const pathname = usePathname()
 
   return (
+    <>
+    {/* Barra de ubicación */}
+    <div className="bg-deep-navy border-b border-white/5 py-1.5 px-6 md:px-12 flex justify-end items-center gap-2">
+      <span className="material-symbols-outlined text-systemic-orange text-[13px]">location_on</span>
+      <span className="text-[10px] font-bold tracking-[0.25em] text-systemic-orange uppercase">Rosario — Valencia</span>
+    </div>
     <nav className="sticky top-0 z-50 transition-all duration-300 border-b border-white/10" style={{ background: 'rgba(8,13,46,0.92)', backdropFilter: 'blur(16px)' }}>
       <div className="flex justify-between items-center w-full px-6 md:px-12 max-w-[1280px] mx-auto h-20">
         <Link href="/" className="text-2xl font-semibold text-white">
@@ -59,5 +65,6 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+    </>
   )
 }

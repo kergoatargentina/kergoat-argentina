@@ -5,7 +5,8 @@ export default function Footer() {
     <footer className="bg-deep-navy text-pure-white">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-12 flex flex-col md:flex-row justify-between items-start">
         <div className="mb-10 md:mb-0">
-          <div className="text-2xl font-bold mb-4">Kergoat Argentina</div>
+          <div className="text-2xl font-bold mb-1">Kergoat Argentina</div>
+          <p className="text-xs font-bold tracking-widest uppercase text-systemic-orange mb-4">Business Consultancy & Trading</p>
           <p className="text-sm text-white/70 max-w-xs leading-relaxed">
             Transformando organizaciones a través del orden sistémico y la metodología de alto rendimiento.
           </p>
@@ -15,6 +16,7 @@ export default function Footer() {
           <div>
             <h5 className="text-xs font-bold tracking-widest uppercase text-systemic-orange mb-6">Navegación</h5>
             <ul className="space-y-4 text-sm">
+              <li><Link href="/nosotros" className="text-white/70 hover:text-systemic-orange transition-colors">Nosotros</Link></li>
               <li><Link href="/metodo" className="text-white/70 hover:text-systemic-orange transition-colors">Método Kergoat</Link></li>
               <li><Link href="/casos" className="text-white/70 hover:text-systemic-orange transition-colors">Casos de Éxito</Link></li>
               <li><Link href="/contacto" className="text-white/70 hover:text-systemic-orange transition-colors">Contacto</Link></li>
@@ -44,7 +46,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-white/50">© 2024 Kergoat Argentina. Todos los derechos reservados.</p>
+        <p className="text-xs text-white/50">© 2025 Kergoat Argentina. Todos los derechos reservados.</p>
         <div className="flex gap-6 text-xs text-white/50">
           <Link href="#" className="hover:text-systemic-orange transition-colors">LINKEDIN</Link>
           <Link href="#" className="hover:text-systemic-orange transition-colors">INSTAGRAM</Link>

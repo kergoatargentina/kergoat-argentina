@@ -3,47 +3,51 @@ import AnimateOnScroll from '@/components/AnimateOnScroll'
 import CountUp from '@/components/CountUp'
 import Link from 'next/link'
 
+const obstaculos = [
+  { num: '01', icon: 'explore', title: 'Falta de dirección estratégica' },
+  { num: '02', icon: 'trending_down', title: 'Crecimiento desordenado' },
+  { num: '03', icon: 'groups', title: 'Conflictos internos o desmotivación del equipo' },
+  { num: '04', icon: 'money_off', title: 'Baja rentabilidad' },
+  { num: '05', icon: 'corporate_fare', title: 'Estructuras corporativas ineficientes' },
+  { num: '06', icon: 'map', title: 'Dificultad para expandirse a nuevos mercados' },
+  { num: '07', icon: 'language', title: 'Falta de visión internacional' },
+]
+
 export default function HomePage() {
   return (
     <PublicLayout>
-      {/* Hero — fondo navy profundo */}
+      {/* Hero — navy profundo */}
       <section className="min-h-[90vh] flex items-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #080d2e 0%, #0B124A 60%, #0e1a5e 100%)' }}>
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <AnimateOnScroll direction="up" delay={0}>
               <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-systemic-orange/40 text-systemic-orange text-xs font-bold tracking-widest uppercase mb-8">
-                <span className="material-symbols-outlined text-base">account_tree</span>
-                Consultoría Sistémica
+                <span className="material-symbols-outlined text-base">public</span>
+                Consultoría Estratégica Internacional
               </span>
             </AnimateOnScroll>
 
             <AnimateOnScroll direction="up" delay={100}>
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight mb-8 text-white">
-                Del Caos al<br />
-                <span className="text-systemic-orange">Orden Sistémico</span>
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-8 text-white">
+                Las organizaciones que crecen no lo hacen por inercia,{' '}
+                <span className="text-systemic-orange">escalan con propósito y diseño estratégico.</span>
               </h1>
             </AnimateOnScroll>
 
             <AnimateOnScroll direction="up" delay={200}>
               <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-lg">
-                Profesionalizamos empresas argentinas a través de metodologías estructurales probadas. Diseñamos los cimientos donde la autoridad y el propósito se alinean perfectamente.
+                Arquitectura de organizaciones diseñadas para escalar, decidir y evolucionar. Conectando talento y visión en un mercado global sin fronteras.
               </p>
             </AnimateOnScroll>
 
             <AnimateOnScroll direction="up" delay={300}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contacto"
-                  className="liquid-glass-primary text-white px-10 py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2"
-                >
-                  Agendar Diagnóstico Gratuito
+                <Link href="/metodo" className="liquid-glass-primary text-white px-10 py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+                  Conocé nuestros programas
                   <span className="material-symbols-outlined text-base">arrow_forward</span>
                 </Link>
-                <Link
-                  href="/metodo"
-                  className="bg-transparent border-2 border-white/30 text-white px-10 py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:border-systemic-orange hover:text-systemic-orange transition-all duration-300"
-                >
-                  Conocer el Método
+                <Link href="/contacto" className="bg-transparent border-2 border-white/30 text-white px-10 py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:border-systemic-orange hover:text-systemic-orange transition-all duration-300">
+                  Iniciar transformación
                 </Link>
               </div>
             </AnimateOnScroll>
@@ -51,7 +55,6 @@ export default function HomePage() {
 
           <AnimateOnScroll direction="right" delay={200}>
             <div className="grid grid-cols-2 gap-6">
-              {/* Stats */}
               <div className="col-span-2 rounded-2xl p-8 border border-white/10" style={{ background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(12px)' }}>
                 <div className="grid grid-cols-3 gap-8 text-center">
                   <div>
@@ -77,7 +80,7 @@ export default function HomePage() {
 
               <div className="p-8 rounded-2xl border border-systemic-orange/20 hover:border-systemic-orange/50 transition-all" style={{ background: 'rgba(255,107,0,0.08)' }}>
                 <span className="material-symbols-outlined text-systemic-orange text-4xl mb-4 block">layers</span>
-                <h3 className="text-lg font-semibold text-white mb-2">Nivel Foundation</h3>
+                <h3 className="text-lg font-semibold text-white mb-2">Foundation</h3>
                 <p className="text-sm text-white/60">Orden y coordinación organizacional</p>
               </div>
 
@@ -91,110 +94,134 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Propuesta de valor — blanco roto */}
+      {/* Problemas que resolvemos — blanco roto */}
       <section className="py-24 md:py-32" style={{ background: '#fbf9f8' }}>
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
-          <AnimateOnScroll direction="up">
-            <div className="text-center mb-16 max-w-3xl mx-auto">
-              <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Por Qué Kergoat</span>
-              <h2 className="text-4xl font-semibold text-deep-navy mb-6">
-                Una organización sin estructura es un grupo de personas trabajando duro en direcciones opuestas
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+            {/* Texto sticky */}
+            <AnimateOnScroll direction="up" className="lg:w-1/3">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-systemic-orange/10 text-systemic-orange text-xs font-bold tracking-widest uppercase border border-systemic-orange/20 mb-6">
+                <span className="material-symbols-outlined text-base">target</span>
+                Identificamos y Erradicamos
+              </span>
+              <h2 className="text-4xl font-bold text-deep-navy mb-6 leading-tight">
+                Los obstáculos que <span className="text-systemic-orange">frenan su expansión</span>
               </h2>
+              <div className="w-12 h-1 bg-systemic-orange rounded-full mb-6" />
               <p className="text-base text-on-surface-variant leading-relaxed">
-                Nuestra metodología transforma esa energía dispersa en un sistema escalable donde cada persona conoce su rol, sus procesos y su impacto.
+                <strong className="text-deep-navy">Hacemos visible lo invisible</strong> para convertirlo en capacidad instalada. Identificamos los obstáculos silenciosos que destruyen su rentabilidad y bloquean el verdadero potencial de su negocio.
+              </p>
+            </AnimateOnScroll>
+
+            {/* Grid de obstáculos */}
+            <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {obstaculos.map(({ num, icon, title }, i) => (
+                <AnimateOnScroll key={num} direction="up" delay={i * 60}>
+                  <div className="relative bg-white p-8 rounded-2xl border border-deep-navy/10 hover:border-systemic-orange/40 hover:shadow-lg transition-all duration-300 group overflow-hidden">
+                    <div className="absolute -right-3 -top-4 text-[80px] font-black text-deep-navy/4 group-hover:text-systemic-orange/5 transition-colors select-none pointer-events-none">
+                      {num}
+                    </div>
+                    <div className="w-12 h-12 bg-deep-navy/5 group-hover:bg-systemic-orange rounded-xl flex items-center justify-center text-systemic-orange group-hover:text-white mb-5 transition-all duration-300">
+                      <span className="material-symbols-outlined">{icon}</span>
+                    </div>
+                    <h3 className="text-base font-bold text-deep-navy leading-snug">{title}</h3>
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-systemic-orange group-hover:w-full transition-all duration-500" />
+                  </div>
+                </AnimateOnScroll>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enfoque — navy */}
+      <section className="py-24 md:py-32" style={{ background: '#080d2e' }}>
+        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+          <AnimateOnScroll direction="up">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-semibold text-white mb-6">Intervenimos donde su empresa más lo necesita</h2>
+              <p className="text-base text-white/60 leading-relaxed max-w-3xl mx-auto">
+                Un engranaje aislado no mueve la máquina. Nuestro abordaje es siempre estructural — integrando estrategia, cultura y capital humano.
               </p>
             </div>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {[
-              { icon: 'manage_accounts', title: 'Diagnóstico Sistémico', desc: 'Analizamos la estructura actual, identificamos fugas operativas y diseñamos el mapa de transformación.', delay: 0 },
-              { icon: 'schema', title: 'Implementación del Método', desc: 'Aplicamos Foundation e Impulso 90 en etapas claras, con hitos medibles y acompañamiento directo.', delay: 100 },
-              { icon: 'trending_up', title: 'Escalamiento Sostenible', desc: 'Una vez consolidada la estructura, activamos el crecimiento con procesos que no colapsan bajo presión.', delay: 200 },
-            ].map(({ icon, title, desc, delay }) => (
-              <AnimateOnScroll key={title} direction="up" delay={delay}>
-                <div className="bg-white p-10 rounded-2xl border border-deep-navy/10 hover:border-systemic-orange/40 hover:shadow-lg transition-all hover:-translate-y-1 h-full">
+              { icon: 'manage_accounts', title: 'Productividad y Resultados', desc: 'Activamos el potencial operativo de cada área para generar resultados concretos y medibles.' },
+              { icon: 'schema', title: 'Ordenamiento Organizacional', desc: 'Diseñamos la estructura que permite a tu empresa funcionar sin depender de una sola persona.' },
+              { icon: 'settings', title: 'Conducción y Coordinación', desc: 'Implementamos sistemas de gestión que aseguran que la estrategia baje a la ejecución sin fricciones.' },
+            ].map(({ icon, title, desc }, i) => (
+              <AnimateOnScroll key={title} direction="up" delay={i * 100}>
+                <div className="p-8 rounded-2xl border border-white/10 hover:border-systemic-orange/40 transition-all" style={{ background: 'rgba(255,255,255,0.04)' }}>
                   <span className="material-symbols-outlined text-systemic-orange text-4xl mb-6 block">{icon}</span>
-                  <h3 className="text-xl font-semibold text-deep-navy mb-4">{title}</h3>
+                  <h3 className="text-xl font-semibold text-white mb-4">{title}</h3>
+                  <p className="text-sm text-white/60 leading-relaxed">{desc}</p>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+
+          <AnimateOnScroll direction="up">
+            <div className="border-2 border-systemic-orange/60 rounded-xl p-8 text-center">
+              <div className="w-3 h-3 bg-systemic-orange rounded-full animate-pulse mx-auto mb-4" />
+              <p className="text-systemic-orange font-black tracking-[0.2em] text-lg uppercase">
+                Transformamos empresas desde su estrategia, su cultura y su capital humano.
+                <span className="block text-white mt-2">Trabajamos para que alcancen su máximo potencial de crecimiento.</span>
+              </p>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* Método preview — blanco roto */}
+      <section className="py-24 md:py-32" style={{ background: '#fbf9f8' }}>
+        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+          <AnimateOnScroll direction="up">
+            <div className="text-center mb-16 max-w-3xl mx-auto">
+              <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Método Kergoat</span>
+              <h2 className="text-4xl font-semibold text-deep-navy mb-6">
+                6 programas para cada nivel de madurez organizacional
+              </h2>
+              <p className="text-base text-on-surface-variant leading-relaxed">
+                Proponemos saltos de capacidad organizacional. Cada programa está diseñado para el momento exacto de tu empresa.
+              </p>
+            </div>
+          </AnimateOnScroll>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {[
+              { num: '01', title: 'Impulso 90', sub: 'Empresa Visible', desc: 'Diagnóstico ejecutivo. Hacemos visible lo invisible: qué te frena y cuánto te cuesta.' },
+              { num: '02', title: 'Foundation', sub: 'Empresa Coordinada', desc: 'Instalación del sistema operativo. Se termina el "todo pasa por el dueño".' },
+              { num: '03', title: 'Growth', sub: 'Empresa Profesional', desc: 'Gobernanza y liderazgo corporativo para crecer sin romperse.' },
+            ].map(({ num, title, sub, desc }, i) => (
+              <AnimateOnScroll key={title} direction="up" delay={i * 80}>
+                <div className="bg-white p-8 rounded-2xl border border-deep-navy/10 hover:border-systemic-orange/40 hover:shadow-lg transition-all hover:-translate-y-1 h-full">
+                  <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">{num}</span>
+                  <h3 className="text-xl font-bold text-deep-navy mb-1">{title}</h3>
+                  <p className="text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-4">{sub}</p>
                   <p className="text-sm text-on-surface-variant leading-relaxed">{desc}</p>
                 </div>
               </AnimateOnScroll>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Metodología — fondo más oscuro */}
-      <section className="py-24 md:py-32" style={{ background: '#080d2e' }}>
-        <div className="max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-16 items-center">
-          <AnimateOnScroll direction="left" className="lg:w-1/2">
-            <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">El Método Kergoat</span>
-            <h2 className="text-4xl font-semibold text-white mb-6">Un camino previsible hacia la profesionalización</h2>
-            <p className="text-base text-white/60 leading-relaxed mb-10">
-              No trabajamos con parches ni soluciones temporales. Diseñamos la arquitectura sistémica que permite a tu empresa crecer x10 sin colapsar por falta de estructura.
-            </p>
-
-            <div className="space-y-6">
-              {[
-                { num: '01', label: 'Foundation', desc: 'Ordenamiento, roles y procesos base' },
-                { num: '02', label: 'Impulso 90', desc: 'Escalamiento comercial en 90 días' },
-                { num: '03', label: 'Growth', desc: 'Expansión y autonomía directiva' },
-              ].map(({ num, label, desc }, i) => (
-                <AnimateOnScroll key={num} direction="left" delay={i * 100}>
-                  <div className="flex items-start gap-6">
-                    <div className="w-10 h-10 rounded-full bg-systemic-orange text-white flex items-center justify-center font-bold text-xs shrink-0">{num}</div>
-                    <div>
-                      <div className="font-bold text-white">{label}</div>
-                      <div className="text-sm text-white/60">{desc}</div>
-                    </div>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-
-            <AnimateOnScroll direction="up" delay={300}>
-              <Link href="/metodo" className="mt-10 inline-flex items-center gap-2 text-systemic-orange font-bold hover:underline">
-                Ver el método completo
+          <AnimateOnScroll direction="up" delay={200}>
+            <div className="text-center">
+              <Link href="/metodo" className="inline-flex items-center gap-2 text-systemic-orange font-bold hover:underline">
+                Ver los 6 programas completos
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
               </Link>
-            </AnimateOnScroll>
-          </AnimateOnScroll>
-
-          <AnimateOnScroll direction="right" className="lg:w-1/2">
-            <div className="rounded-3xl p-10 border border-systemic-orange/20" style={{ background: 'rgba(255,107,0,0.06)' }}>
-              <div className="text-xs font-bold tracking-widest text-systemic-orange uppercase mb-8">Caso de Éxito</div>
-              <blockquote className="text-xl font-semibold text-white leading-relaxed mb-8">
-                "En 6 meses, la empresa pasó de ser dirigida por intuición a ser gobernada por datos y procesos sistémicos."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center border border-systemic-orange/30">
-                  <span className="material-symbols-outlined text-systemic-orange">person</span>
-                </div>
-                <div>
-                  <div className="font-bold text-white">Carlos Rodriguez</div>
-                  <div className="text-xs text-white/70 uppercase tracking-widest">CEO, Distribuidora Austral</div>
-                </div>
-              </div>
-              <div className="mt-8 grid grid-cols-2 gap-6 border-t border-white/10 pt-8">
-                <div>
-                  <div className="text-3xl font-bold text-systemic-orange">+<CountUp end={45} suffix="%" /></div>
-                  <div className="text-xs text-white/70 uppercase tracking-widest mt-1">Eficiencia</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-systemic-orange"><CountUp end={90} /> días</div>
-                  <div className="text-xs text-white/70 uppercase tracking-widest mt-1">Implementación</div>
-                </div>
-              </div>
             </div>
           </AnimateOnScroll>
         </div>
       </section>
 
-      {/* CTA final — franja naranja */}
+      {/* CTA final — naranja */}
       <section className="py-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, #FF6B00 0%, #cc5500 100%)' }}>
         <AnimateOnScroll direction="up">
           <div className="max-w-[1280px] mx-auto px-6 md:px-12 text-center">
-            <h2 className="text-4xl font-semibold text-white mb-6">¿Tu empresa es el próximo caso de éxito?</h2>
+            <h2 className="text-4xl font-semibold text-white mb-6">Analizamos tus objetivos, alcanzamos tu éxito.</h2>
             <p className="text-base text-white/80 mb-10 max-w-xl mx-auto">
               El primer paso es un diagnóstico sin costo donde analizamos tu estructura y te mostramos el camino.
             </p>
@@ -202,7 +229,7 @@ export default function HomePage() {
               href="/contacto"
               className="inline-flex items-center gap-3 bg-white text-systemic-orange px-12 py-5 font-bold text-sm hover:bg-deep-navy hover:text-white transition-all duration-300"
             >
-              AGENDAR DIAGNÓSTICO SIN COSTO
+              INICIAR TRANSFORMACIÓN
               <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
           </div>
