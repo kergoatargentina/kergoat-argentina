@@ -3,6 +3,7 @@ import AnimateOnScroll from '@/components/AnimateOnScroll'
 import CountUp from '@/components/CountUp'
 import Link from 'next/link'
 import MagneticButton from '@/components/MagneticButton'
+import { NAVY_GRADIENT, ORANGE_GRADIENT } from '@/lib/theme'
 
 const obstaculos = [
   { num: '01', icon: 'explore', title: 'Falta de dirección estratégica' },
@@ -18,7 +19,7 @@ export default function HomePage() {
   return (
     <PublicLayout>
       {/* Hero — navy profundo */}
-      <section className="min-h-[90vh] flex items-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #080d2e 0%, #0B124A 60%, #0e1a5e 100%)' }}>
+      <section className="min-h-[90vh] flex items-center overflow-hidden" style={{ background: NAVY_GRADIENT }}>
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <AnimateOnScroll direction="up" delay={0}>
@@ -140,7 +141,7 @@ export default function HomePage() {
       </section>
 
       {/* Enfoque — navy */}
-      <section className="py-24 md:py-32" style={{ background: '#080d2e' }}>
+      <section className="py-24 md:py-32" style={{ background: NAVY_GRADIENT }}>
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
           <AnimateOnScroll direction="up">
             <div className="text-center mb-16">
@@ -223,7 +224,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA final — naranja */}
-      <section className="py-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, #FF6B00 0%, #cc5500 100%)' }}>
+      <section className="py-24 overflow-hidden" style={{ background: ORANGE_GRADIENT }}>
         <AnimateOnScroll direction="up">
           <div className="max-w-[1280px] mx-auto px-6 md:px-12 text-center">
             <h2 className="text-4xl font-semibold text-white mb-6">Analizamos tus objetivos, alcanzamos tu éxito.</h2>

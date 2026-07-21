@@ -81,7 +81,7 @@ export default function Impulso90Page() {
         </section>
 
         {/* Resultados esperados */}
-        <section className="mb-32 bg-deep-navy rounded-3xl p-10 md:p-16 text-pure-white">
+        <section className="mb-32 rounded-3xl p-10 md:p-16 text-pure-white" style={{ background: 'linear-gradient(160deg, #05091f 0%, #0B124A 45%, #0d1660 100%)' }}>
           <div className="text-center mb-12">
             <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Resultados Promedio</span>
             <h2 className="text-3xl font-semibold">Qué esperar al finalizar Impulso 90</h2>

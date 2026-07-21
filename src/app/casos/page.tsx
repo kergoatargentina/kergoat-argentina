@@ -94,7 +94,7 @@ export default async function CasosPage() {
             )}
 
             {/* Metric Card estático */}
-            <div className="col-span-12 lg:col-span-4 bg-deep-navy text-pure-white p-10 rounded-xl flex flex-col justify-center relative overflow-hidden">
+            <div className="col-span-12 lg:col-span-4 text-pure-white p-10 rounded-xl flex flex-col justify-center relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #05091f 0%, #0B124A 45%, #0d1660 100%)' }}>
               <div className="absolute top-0 right-0 p-8 opacity-10">
                 <span className="material-symbols-outlined text-[140px]">analytics</span>
               </div>

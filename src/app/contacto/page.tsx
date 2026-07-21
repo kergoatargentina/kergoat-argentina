@@ -59,7 +59,7 @@ export default function ContactoPage() {
 
           {/* Datos de contacto */}
           <AnimateOnScroll direction="right" delay={100} className="lg:w-1/3 w-full">
-            <div className="bg-deep-navy p-10 rounded-3xl text-white shadow-2xl h-full flex flex-col relative overflow-hidden">
+            <div className="p-10 rounded-3xl text-white shadow-2xl h-full flex flex-col relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #05091f 0%, #0B124A 45%, #0d1660 100%)' }}>
               <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -mr-20 -mt-20" />
 
               <div className="space-y-10 relative z-10 my-auto">

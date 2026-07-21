@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { NAVY_GRADIENT } from '@/lib/theme'
 
 export default function Footer() {
   return (
-    <footer className="bg-deep-navy text-pure-white">
+    <footer className="text-pure-white" style={{ background: NAVY_GRADIENT }}>
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-12 flex flex-col md:flex-row justify-between items-start">
         <div className="mb-10 md:mb-0">
           <Image src="/logo-blanco.svg" alt="Kergoat Argentina" width={200} height={88} className="mb-4" />

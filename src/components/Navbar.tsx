@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import MagneticButton from './MagneticButton'
+import { NAVY_GRADIENT } from '@/lib/theme'
 
 const links = [
   { href: '/', label: 'Inicio' },
@@ -19,11 +20,11 @@ export default function Navbar() {
   return (
     <>
     {/* Barra de ubicación */}
-    <div className="bg-deep-navy border-b border-white/5 py-1.5 px-6 md:px-12 flex justify-end items-center gap-2">
+    <div className="border-b border-white/5 py-1.5 px-6 md:px-12 flex justify-end items-center gap-2" style={{ background: NAVY_GRADIENT }}>
       <span className="material-symbols-outlined text-systemic-orange text-[13px]">location_on</span>
       <span className="text-[10px] font-bold tracking-[0.25em] text-systemic-orange uppercase">Rosario — Valencia</span>
     </div>
-    <nav className="sticky top-0 z-50 transition-all duration-300 border-b border-white/10" style={{ background: 'rgba(8,13,46,0.92)', backdropFilter: 'blur(16px)' }}>
+    <nav className="sticky top-0 z-50 transition-all duration-300 border-b border-white/10" style={{ background: 'linear-gradient(160deg, rgba(5,9,31,0.95) 0%, rgba(11,18,74,0.95) 45%, rgba(13,22,96,0.95) 100%)', backdropFilter: 'blur(16px)' }}>
       <div className="flex justify-between items-center w-full px-6 md:px-12 max-w-[1280px] mx-auto h-20">
         <Link href="/">
           <Image src="/logo-blanco.svg" alt="Kergoat Argentina" width={180} height={79} priority />
