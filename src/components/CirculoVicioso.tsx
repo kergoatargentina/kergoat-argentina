@@ -33,7 +33,7 @@ export default function CirculoVicioso() {
       <style>{`
         @keyframes spinRing {
           from { stroke-dashoffset: 0; }
-          to   { stroke-dashoffset: ${-circumference.toFixed(1)}; }
+          to   { stroke-dashoffset: ${circumference.toFixed(1)}; }
         }
         @keyframes spinArrows {
           from { transform: rotate(0deg); }
@@ -69,7 +69,7 @@ export default function CirculoVicioso() {
           {[0, 90, 180, 270].map((a) => {
             const { x, y } = pos(a, R)
             return (
-              <g key={a} transform={`translate(${x},${y}) rotate(${a + 90})`}>
+              <g key={a} transform={`translate(${x},${y}) rotate(${a + 180})`}>
                 <polygon points="0,-6 4.5,3 -4.5,3" fill="#FF6B00" opacity="0.75" />
               </g>
             )
