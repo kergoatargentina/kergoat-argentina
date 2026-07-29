@@ -2,6 +2,7 @@ import PublicLayout from '@/components/PublicLayout'
 import AnimateOnScroll from '@/components/AnimateOnScroll'
 import AnimatedTitle from '@/components/AnimatedTitle'
 import { StaggerGroup, StaggerItem } from '@/components/StaggerGroup'
+import ParticleCanvas from '@/components/ParticleCanvas'
 import Link from 'next/link'
 import MagneticButton from '@/components/MagneticButton'
 import { NAVY_GRADIENT, ORANGE_GRADIENT } from '@/lib/theme'
@@ -86,6 +87,7 @@ export default function HomePage() {
         }}
       >
         <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg, rgba(5,9,31,0.90) 0%, rgba(11,18,74,0.84) 50%, rgba(13,22,96,0.87) 100%)' }} />
+        <ParticleCanvas opacity={0.35} />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 py-24 text-center">
           <AnimateOnScroll direction="up" delay={0}>
