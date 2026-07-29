@@ -4,6 +4,7 @@ import AnimatedTitle from '@/components/AnimatedTitle'
 import { StaggerGroup, StaggerItem } from '@/components/StaggerGroup'
 import ParticleCanvas from '@/components/ParticleCanvas'
 import MouseGlowCard from '@/components/MouseGlowCard'
+import CirculoVicioso from '@/components/CirculoVicioso'
 import Link from 'next/link'
 import MagneticButton from '@/components/MagneticButton'
 import { NAVY_GRADIENT, ORANGE_GRADIENT } from '@/lib/theme'
@@ -152,28 +153,32 @@ export default function HomePage() {
               </div>
             </AnimateOnScroll>
 
-            {/* Círculo vicioso visual */}
-            <AnimateOnScroll direction="right" delay={150} className="lg:w-1/2">
-              <div className="relative">
-                <StaggerGroup className="grid grid-cols-2 gap-4" stagger={0.1}>
+            {/* Círculo vicioso — rueda animada en desktop, cards en mobile */}
+            <AnimateOnScroll direction="right" delay={150} className="lg:w-1/2 w-full">
+              {/* Desktop: rueda giratoria */}
+              <div className="hidden md:block">
+                <CirculoVicioso />
+              </div>
+
+              {/* Mobile: cards compactas */}
+              <div className="md:hidden">
+                <StaggerGroup className="grid grid-cols-2 gap-3" stagger={0.1}>
                   {[
                     { icon: 'error', label: 'Sistemas insuficientes', color: 'bg-systemic-orange/10 border-systemic-orange/30 text-systemic-orange' },
                     { icon: 'alarm', label: 'Jefaturas gestionando urgencias', color: 'bg-deep-navy/5 border-deep-navy/20 text-deep-navy' },
-                    { icon: 'visibility_off', label: 'Pérdida de capacidad de anticipación', color: 'bg-deep-navy/5 border-deep-navy/20 text-deep-navy' },
+                    { icon: 'visibility_off', label: 'Pérdida de anticipación', color: 'bg-deep-navy/5 border-deep-navy/20 text-deep-navy' },
                     { icon: 'sync_problem', label: 'Más descoordinación', color: 'bg-systemic-orange/10 border-systemic-orange/30 text-systemic-orange' },
                   ].map(({ icon, label, color }) => (
                     <StaggerItem key={label}>
-                      <MouseGlowCard className="rounded-xl" circleSize={280}>
-                        <div className={`border rounded-[11px] p-5 flex flex-col items-center text-center gap-3 ${color}`}>
-                          <span className="material-symbols-outlined text-3xl">{icon}</span>
-                          <span className="text-xs font-bold tracking-wide uppercase leading-tight">{label}</span>
-                        </div>
-                      </MouseGlowCard>
+                      <div className={`border rounded-xl p-4 flex flex-col items-center text-center gap-2 ${color}`}>
+                        <span className="material-symbols-outlined text-2xl">{icon}</span>
+                        <span className="text-xs font-bold tracking-wide uppercase leading-tight">{label}</span>
+                      </div>
                     </StaggerItem>
                   ))}
                 </StaggerGroup>
-                <div className="mt-4 text-center bg-systemic-orange rounded-xl p-4">
-                  <span className="material-symbols-outlined text-white text-2xl block mb-1">autorenew</span>
+                <div className="mt-3 text-center bg-systemic-orange rounded-xl p-3">
+                  <span className="material-symbols-outlined text-white text-xl block mb-1">autorenew</span>
                   <p className="text-white font-black text-xs tracking-widest uppercase">Círculo Vicioso</p>
                 </div>
               </div>
