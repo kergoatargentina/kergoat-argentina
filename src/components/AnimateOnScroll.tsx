@@ -1,52 +1,32 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
+import { ReactNode } from 'react'
 
 type Props = {
-  children: React.ReactNode
+  children: ReactNode
   className?: string
-  delay?: number // ms
+  delay?: number
   direction?: 'up' | 'left' | 'right' | 'fade'
 }
 
-export default function AnimateOnScroll({
-  children,
-  className = '',
-  delay = 0,
-  direction = 'up',
-}: Props) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+const initialMap = {
+  up: { opacity: 0, y: 40 },
+  left: { opacity: 0, x: -40 },
+  right: { opacity: 0, x: 40 },
+  fade: { opacity: 0 },
+}
 
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setVisible(true), delay)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.15 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [delay])
-
-  const initial: Record<string, string> = {
-    up: 'opacity-0 translate-y-8',
-    left: 'opacity-0 -translate-x-8',
-    right: 'opacity-0 translate-x-8',
-    fade: 'opacity-0',
-  }
-
+export default function AnimateOnScroll({ children, className, delay = 0, direction = 'up' }: Props) {
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ease-out ${visible ? 'opacity-100 translate-x-0 translate-y-0' : initial[direction]} ${className}`}
+    <motion.div
+      initial={initialMap[direction]}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, amount: 0 }}
+      transition={{ duration: 0.65, delay: delay / 1000, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className={className}
     >
       {children}
-    </div>
+    </motion.div>
   )
 }
