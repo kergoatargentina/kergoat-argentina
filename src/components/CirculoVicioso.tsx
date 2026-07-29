@@ -33,7 +33,7 @@ export default function CirculoVicioso() {
       <style>{`
         @keyframes spinRing {
           from { stroke-dashoffset: 0; }
-          to   { stroke-dashoffset: ${circumference.toFixed(1)}; }
+          to   { stroke-dashoffset: ${(-circumference).toFixed(1)}; }
         }
         @keyframes spinArrows {
           from { transform: rotate(0deg); }
