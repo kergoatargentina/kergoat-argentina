@@ -3,6 +3,7 @@ import AnimateOnScroll from '@/components/AnimateOnScroll'
 import AnimatedTitle from '@/components/AnimatedTitle'
 import { StaggerGroup, StaggerItem } from '@/components/StaggerGroup'
 import ParticleCanvas from '@/components/ParticleCanvas'
+import MouseGlowCard from '@/components/MouseGlowCard'
 import Link from 'next/link'
 import MagneticButton from '@/components/MagneticButton'
 import { NAVY_GRADIENT, ORANGE_GRADIENT } from '@/lib/theme'
@@ -162,10 +163,12 @@ export default function HomePage() {
                     { icon: 'sync_problem', label: 'Más descoordinación', color: 'bg-systemic-orange/10 border-systemic-orange/30 text-systemic-orange' },
                   ].map(({ icon, label, color }) => (
                     <StaggerItem key={label}>
-                      <div className={`border rounded-xl p-5 flex flex-col items-center text-center gap-3 ${color}`}>
-                        <span className="material-symbols-outlined text-3xl">{icon}</span>
-                        <span className="text-xs font-bold tracking-wide uppercase leading-tight">{label}</span>
-                      </div>
+                      <MouseGlowCard className="rounded-xl" circleSize={280}>
+                        <div className={`border rounded-[11px] p-5 flex flex-col items-center text-center gap-3 ${color}`}>
+                          <span className="material-symbols-outlined text-3xl">{icon}</span>
+                          <span className="text-xs font-bold tracking-wide uppercase leading-tight">{label}</span>
+                        </div>
+                      </MouseGlowCard>
                     </StaggerItem>
                   ))}
                 </StaggerGroup>
@@ -238,18 +241,19 @@ export default function HomePage() {
           <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10" stagger={0.08}>
             {programas.map(({ num, title, sub, desc, icon }) => (
               <StaggerItem key={title}>
-                <div className="bg-white p-8 rounded-2xl border border-deep-navy/10 hover:border-systemic-orange/40 hover:shadow-lg transition-all hover:-translate-y-1 h-full relative overflow-hidden group">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-systemic-orange/60 to-systemic-orange opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="flex items-center gap-3 mb-5">
-                    <span className="w-8 h-8 rounded-lg bg-systemic-orange/10 flex items-center justify-center">
-                      <span className="material-symbols-outlined text-systemic-orange text-base">{icon}</span>
-                    </span>
-                    <span className="text-xs font-black tracking-widest text-systemic-orange uppercase">{num}</span>
+                <MouseGlowCard className="rounded-2xl h-full hover:-translate-y-1 transition-transform duration-300">
+                  <div className="bg-white/92 p-8 rounded-[19px] border border-deep-navy/10 hover:border-systemic-orange/40 hover:shadow-lg transition-all h-full group">
+                    <div className="flex items-center gap-3 mb-5">
+                      <span className="w-8 h-8 rounded-lg bg-systemic-orange/10 flex items-center justify-center">
+                        <span className="material-symbols-outlined text-systemic-orange text-base">{icon}</span>
+                      </span>
+                      <span className="text-xs font-black tracking-widest text-systemic-orange uppercase">{num}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-navy mb-1">{title}</h3>
+                    <p className="text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-4">{sub}</p>
+                    <p className="text-sm text-on-surface-variant leading-relaxed">{desc}</p>
                   </div>
-                  <h3 className="text-xl font-bold text-deep-navy mb-1">{title}</h3>
-                  <p className="text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-4">{sub}</p>
-                  <p className="text-sm text-on-surface-variant leading-relaxed">{desc}</p>
-                </div>
+                </MouseGlowCard>
               </StaggerItem>
             ))}
           </StaggerGroup>
