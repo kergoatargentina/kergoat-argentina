@@ -126,7 +126,7 @@ export default function ParticleCanvas({ opacity = 0.35 }: Props) {
     const onMouseOut = () => { mouse.x = null; mouse.y = null }
 
     window.addEventListener('resize', resize)
-    canvas.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('mouseout', onMouseOut)
 
     resize()

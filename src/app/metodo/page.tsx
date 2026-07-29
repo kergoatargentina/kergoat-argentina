@@ -151,10 +151,8 @@ export default function MetodoPage() {
             {programas.map(({ num, title, sub, desc, href, icon }) => {
               const card = (
                 <div
-                  className="p-8 rounded-2xl h-full flex flex-col transition-all duration-300 group relative overflow-hidden"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
-                  onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,107,0,0.35)')}
-                  onMouseLeave={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)')}
+                  className="p-8 rounded-2xl h-full flex flex-col transition-all duration-300 group relative overflow-hidden border border-white/10 hover:border-systemic-orange/40"
+                  style={{ background: 'rgba(255,255,255,0.06)' }}
                 >
                   <div className="pointer-events-none absolute -top-8 -right-8 w-24 h-24 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'rgba(255,107,0,0.1)', filter: 'blur(20px)' }} />
                   <div className="flex items-center gap-3 mb-6 relative z-10">
