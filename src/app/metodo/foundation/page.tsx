@@ -1,200 +1,283 @@
 import PublicLayout from '@/components/PublicLayout'
+import AnimateOnScroll from '@/components/AnimateOnScroll'
+import { StaggerGroup, StaggerItem } from '@/components/StaggerGroup'
+import ParticleCanvas from '@/components/ParticleCanvas'
+import MouseGlowCard from '@/components/MouseGlowCard'
+import MagneticButton from '@/components/MagneticButton'
 import Link from 'next/link'
+import { NAVY_GRADIENT, ORANGE_GRADIENT } from '@/lib/theme'
 
 export const metadata = {
-  title: 'Método Kergoat — Nivel Foundation | Kergoat Argentina',
+  title: 'Foundation — Ordenamiento y Coordinación | Kergoat Argentina',
 }
+
+const procesos = [
+  { label: 'DISEÑO', value: 'Jerarquía Plana', icon: 'account_tree' },
+  { label: 'FLUJO', value: 'Owner de Proceso', icon: 'swap_horiz' },
+  { label: 'CONTROL', value: 'KPIs de Función', icon: 'monitoring' },
+]
+
+const rutinas = [
+  {
+    cadencia: 'Diario',
+    icon: 'today',
+    title: 'Check-in Operativo',
+    desc: '15 minutos para alinear objetivos diarios y remover bloqueos inmediatos.',
+    items: ['Alineación rápida', 'Foco en prioridades'],
+    accent: true,
+  },
+  {
+    cadencia: 'Semanal',
+    icon: 'calendar_view_week',
+    title: 'Sincronización Táctica',
+    desc: 'Revisión de indicadores clave y ajuste de la hoja de ruta semanal.',
+    items: ['Análisis de KPIs', 'Gestión de proyectos'],
+    accent: false,
+  },
+  {
+    cadencia: 'Mensual',
+    icon: 'calendar_month',
+    title: 'Comité Sistémico',
+    desc: 'Evaluación profunda del nivel Foundation y preparación para el escalamiento.',
+    items: ['Visión estratégica', 'Feedback 360°'],
+    accent: true,
+  },
+]
+
+const impactos = [
+  { icon: 'rocket_launch', title: 'Escalabilidad Real', desc: 'Preparamos el negocio para crecer x10 sin colapsar por falta de estructura.' },
+  { icon: 'manage_accounts', title: 'Autonomía Directiva', desc: 'Los líderes se liberan de la micro-gestión para enfocarse en la estrategia.' },
+  { icon: 'handshake', title: 'Cultura de Orden', desc: 'Se establece un lenguaje común y una ética de trabajo profesionalizada.' },
+  { icon: 'trending_up', title: 'Valor de Mercado', desc: 'Una empresa con procesos Foundation es un activo mucho más valioso.' },
+]
 
 export default function FoundationPage() {
   return (
     <PublicLayout>
-      <main className="max-w-[1280px] mx-auto px-6 md:px-12 py-12 md:py-24">
 
-        {/* Hero */}
-        <header className="mb-24 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-soft-apricot text-systemic-orange mb-6">
-            <span className="material-symbols-outlined text-[18px]">account_tree</span>
-            <span className="text-xs font-bold tracking-widest uppercase">Nivel 01 — Foundation</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-deep-navy mb-8 tracking-tight leading-tight">
-            Ordenamiento y Coordinación Organizacional
-          </h1>
-          <p className="text-lg text-on-surface-variant leading-relaxed">
-            El Nivel Foundation es la piedra angular del Método Kergoat. Aquí transformamos el caos operativo en una estructura sistémica escalable, diseñando los cimientos donde la autoridad y el propósito se alinean perfectamente.
-          </p>
-        </header>
+      {/* 1. Hero — navy + partículas */}
+      <section className="py-28 md:py-40 relative overflow-hidden" style={{ background: NAVY_GRADIENT }}>
+        <ParticleCanvas opacity={0.4} />
+        <div className="pointer-events-none absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full" style={{ background: 'rgba(255,107,0,0.08)', filter: 'blur(100px)' }} />
 
-        {/* Filosofía Foundation */}
-        <section className="mb-32">
-          <div className="flex flex-col md:flex-row gap-16 items-center">
-            <div className="w-full md:w-1/2">
-              <h2 className="text-3xl font-semibold text-deep-navy mb-6">Filosofía Foundation</h2>
-              <div className="space-y-6">
-                <p className="text-base text-on-surface-variant">
-                  Creemos que la libertad empresarial no nace de la ausencia de reglas, sino de la perfección de la estructura. La filosofía Foundation busca erradicar la incertidumbre operativa mediante la definición clara de "Quién", "Cómo" y "Para Qué".
+        <div className="max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
+          <AnimateOnScroll direction="up">
+            <Link href="/metodo" className="inline-flex items-center gap-2 text-white/40 hover:text-systemic-orange text-xs font-bold tracking-widest uppercase mb-8 transition-colors">
+              <span className="material-symbols-outlined text-sm">arrow_back</span>
+              Programas
+            </Link>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-systemic-orange/40 text-systemic-orange text-xs font-bold tracking-widest uppercase mb-8 ml-6">
+              <span className="material-symbols-outlined text-sm">layers</span>
+              Nivel 02 — Foundation
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight max-w-4xl">
+              Ordenamiento y Coordinación Organizacional
+            </h1>
+          </AnimateOnScroll>
+          <AnimateOnScroll direction="up" delay={150}>
+            <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              El Nivel Foundation es la piedra angular del Método Kergoat. Transformamos el caos operativo en una estructura sistémica escalable, diseñando los cimientos donde la autoridad y el propósito se alinean perfectamente.
+            </p>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* 2. Filosofía — light cream */}
+      <section className="py-24 md:py-32" style={{ background: '#fbf9f8' }}>
+        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+
+            <AnimateOnScroll direction="up" className="lg:w-1/2">
+              <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-5">Filosofía Foundation</span>
+              <h2 className="text-4xl font-bold text-deep-navy mb-8 leading-tight">
+                La libertad nace de la <span className="text-systemic-orange">perfección de la estructura</span>
+              </h2>
+              <p className="text-base text-on-surface-variant leading-relaxed mb-8">
+                Creemos que la libertad empresarial no nace de la ausencia de reglas, sino de la perfección de la estructura. La filosofía Foundation busca erradicar la incertidumbre operativa mediante la definición clara de <strong className="text-deep-navy">"Quién", "Cómo" y "Para Qué"</strong>.
+              </p>
+              <div className="bg-deep-navy/5 border border-deep-navy/10 rounded-2xl p-6">
+                <p className="text-sm font-bold text-deep-navy italic leading-relaxed">
+                  "Una organización sin cimientos es simplemente un grupo de personas trabajando duro en direcciones opuestas. Foundation crea el eje central."
                 </p>
-                <div className="bg-soft-apricot p-8 rounded-xl border-l-4 border-systemic-orange">
-                  <p className="text-lg italic text-deep-navy">
-                    "Una organización sin cimientos es simplemente un grupo de personas trabajando duro en direcciones opuestas. Foundation crea el eje central."
-                  </p>
-                </div>
               </div>
-            </div>
-            <div className="w-full md:w-1/2">
-              <div className="bg-deep-navy rounded-xl h-[400px] flex items-center justify-center">
-                <div className="text-center text-white/30">
-                  <span className="material-symbols-outlined text-9xl">corporate_fare</span>
-                  <p className="text-sm mt-4">Imagen arquitectónica</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+            </AnimateOnScroll>
 
-        {/* Bento Grid */}
-        <section className="mb-32">
-          <div className="mb-12">
-            <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-2">Implementación</span>
-            <h2 className="text-3xl font-semibold text-deep-navy">Gestión Sistémica de Procesos</h2>
+            <AnimateOnScroll direction="right" delay={150} className="lg:w-1/2 w-full">
+              <StaggerGroup className="grid grid-cols-1 gap-4" stagger={0.1}>
+                {procesos.map(({ label, value, icon }) => (
+                  <StaggerItem key={label}>
+                    <div className="bg-white border border-deep-navy/10 rounded-2xl p-6 flex items-center gap-5 hover:border-systemic-orange/40 hover:shadow-md transition-all duration-300 group">
+                      <div className="w-12 h-12 rounded-xl bg-systemic-orange/10 flex items-center justify-center shrink-0 group-hover:bg-systemic-orange transition-colors duration-300">
+                        <span className="material-symbols-outlined text-systemic-orange group-hover:text-white text-xl transition-colors duration-300">{icon}</span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-black tracking-widest text-systemic-orange uppercase block mb-0.5">{label}</span>
+                        <p className="text-base font-bold text-deep-navy">{value}</p>
+                      </div>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </StaggerGroup>
+            </AnimateOnScroll>
+
           </div>
+        </div>
+      </section>
+
+      {/* 3. Gestión Sistémica — navy glassmorphism */}
+      <section className="py-24 md:py-32" style={{ background: NAVY_GRADIENT }}>
+        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+          <AnimateOnScroll direction="up">
+            <div className="mb-16">
+              <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Implementación</span>
+              <h2 className="text-4xl font-semibold text-white mb-4">Gestión Sistémica de Procesos</h2>
+              <p className="text-base text-white/60 max-w-2xl">Eliminamos la ambigüedad definiendo responsabilidades no solo por cargo, sino por impacto sistémico y rendición de cuentas.</p>
+            </div>
+          </AnimateOnScroll>
 
           <div className="grid grid-cols-12 gap-6">
-            {/* Large Card */}
-            <div className="col-span-12 md:col-span-8 bg-pure-white p-10 rounded-xl border border-deep-navy/10 hover:border-systemic-orange transition-colors group">
-              <div className="flex justify-between items-start mb-12">
-                <div>
-                  <h3 className="text-2xl font-semibold text-deep-navy mb-4">Matriz de Roles Dinámicos</h3>
-                  <p className="text-base text-on-surface-variant max-w-md">Eliminamos la ambigüedad definiendo responsabilidades no solo por cargo, sino por impacto sistémico y rendición de cuentas.</p>
-                </div>
-                <span className="material-symbols-outlined text-systemic-orange text-4xl">diversity_3</span>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {[
-                  { label: 'DISEÑO', value: 'Jerarquía Plana' },
-                  { label: 'FLUJO', value: 'Owner de Proceso' },
-                  { label: 'CONTROL', value: 'KPIs de Función' },
-                ].map(({ label, value }) => (
-                  <div key={label} className="p-4 bg-background rounded-lg border border-outline-variant/30">
-                    <span className="text-[10px] font-bold tracking-widest text-systemic-orange block mb-2">{label}</span>
-                    <p className="text-base font-bold">{value}</p>
+            <AnimateOnScroll direction="up" delay={0} className="col-span-12 md:col-span-8">
+              <div className="h-full p-10 rounded-2xl border border-white/10 hover:border-systemic-orange/40 transition-all" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                <div className="flex justify-between items-start mb-10">
+                  <div>
+                    <h3 className="text-2xl font-semibold text-white mb-3">Matriz de Roles Dinámicos</h3>
+                    <p className="text-sm text-white/60 max-w-md leading-relaxed">Eliminamos la ambigüedad definiendo responsabilidades no solo por cargo, sino por impacto sistémico.</p>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Metric Card */}
-            <div className="col-span-12 md:col-span-4 bg-deep-navy p-10 rounded-xl text-pure-white flex flex-col justify-between">
-              <span className="material-symbols-outlined text-systemic-orange text-4xl mb-8">analytics</span>
-              <div>
-                <h3 className="text-2xl font-semibold text-white mb-2">Métricas de Salud</h3>
-                <p className="text-base text-white/70">Monitoreo constante del orden organizacional y la carga operativa.</p>
-              </div>
-            </div>
-
-            {/* Process Card */}
-            <div className="col-span-12 md:col-span-4 bg-soft-apricot p-10 rounded-xl border border-systemic-orange/20">
-              <span className="material-symbols-outlined text-deep-navy text-4xl mb-8">rebase_edit</span>
-              <h3 className="text-2xl font-semibold text-deep-navy mb-2">Manual de Procesos</h3>
-              <p className="text-base text-on-surface-variant">Documentación viva que garantiza la repetibilidad y excelencia.</p>
-            </div>
-
-            {/* Image Card */}
-            <div className="col-span-12 md:col-span-8 overflow-hidden rounded-xl relative h-[320px] bg-graphite">
-              <div className="absolute inset-0 bg-gradient-to-r from-deep-navy to-transparent flex items-center p-12">
-                <div className="max-w-xs">
-                  <h3 className="text-2xl font-semibold text-pure-white mb-4">Sincronización Digital</h3>
-                  <button className="liquid-glass text-pure-white px-6 py-2 rounded-lg text-xs font-bold tracking-widest">VER MÓDULO</button>
+                  <span className="material-symbols-outlined text-systemic-orange text-4xl ml-4 shrink-0">diversity_3</span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Rutinas de Gestión */}
-        <section className="mb-32 py-16 bg-surface-container-low rounded-3xl px-8 md:px-16 border border-outline-variant/20">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-semibold text-deep-navy mb-4">Rutinas de Gestión: El Ritmo de la Empresa</h2>
-            <p className="text-base text-on-surface-variant max-w-2xl mx-auto">Implementamos ciclos de coordinación que aseguran que la estrategia baje a la ejecución sin fricciones.</p>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-center items-stretch gap-8">
-            {[
-              {
-                cadencia: 'DIARIO',
-                color: 'border-systemic-orange',
-                title: 'Check-in Operativo',
-                desc: '15 minutos para alinear objetivos diarios y remover bloqueos inmediatos.',
-                items: ['Alineación rápida', 'Foco en prioridades'],
-                iconColor: 'text-systemic-orange',
-              },
-              {
-                cadencia: 'SEMANAL',
-                color: 'border-deep-navy',
-                title: 'Sincronización Táctica',
-                desc: 'Revisión de indicadores clave y ajuste de la hoja de ruta semanal.',
-                items: ['Análisis de KPIs', 'Gestión de proyectos'],
-                iconColor: 'text-deep-navy',
-              },
-              {
-                cadencia: 'MENSUAL',
-                color: 'border-systemic-orange',
-                title: 'Comité Sistémico',
-                desc: 'Evaluación profunda del nivel Foundation y preparación para el escalamiento.',
-                items: ['Visión estratégica', 'Feedback 360°'],
-                iconColor: 'text-systemic-orange',
-              },
-            ].map(({ cadencia, color, title, desc, items, iconColor }) => (
-              <div key={cadencia} className={`flex-1 bg-pure-white p-8 rounded-2xl shadow-sm border-t-4 ${color} flex flex-col`}>
-                <span className={`text-xs font-bold tracking-widest uppercase ${iconColor} mb-4`}>{cadencia}</span>
-                <h4 className="text-2xl font-semibold text-deep-navy mb-4">{title}</h4>
-                <p className="text-base text-on-surface-variant mb-6">{desc}</p>
-                <ul className="mt-auto space-y-3">
-                  {items.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-base">
-                      <span className={`material-symbols-outlined ${iconColor} text-sm`}>check_circle</span>
-                      {item}
-                    </li>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {procesos.map(({ label, value }) => (
+                    <div key={label} className="p-4 rounded-xl border border-white/10" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                      <span className="text-[10px] font-black tracking-widest text-systemic-orange block mb-2">{label}</span>
+                      <p className="text-sm font-bold text-white">{value}</p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
-            ))}
-          </div>
-        </section>
+            </AnimateOnScroll>
 
-        {/* Impacto Foundation */}
-        <section className="mb-32">
-          <div className="flex flex-col md:flex-row gap-2 bg-deep-navy rounded-3xl overflow-hidden p-2">
-            <div className="w-full md:w-5/12 h-[400px] md:h-auto bg-graphite rounded-2xl flex items-center justify-center">
-              <span className="material-symbols-outlined text-9xl text-white/20">business</span>
-            </div>
-            <div className="w-full md:w-7/12 p-8 md:p-16 flex flex-col justify-center">
-              <h2 className="text-3xl font-semibold text-pure-white mb-8">El Impacto Foundation</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {[
-                  { title: 'Escalabilidad Real', desc: 'Preparamos el negocio para crecer x10 sin colapsar por falta de estructura.' },
-                  { title: 'Autonomía Directiva', desc: 'Los líderes se liberan de la micro-gestión para enfocarse en la estrategia.' },
-                  { title: 'Cultura de Orden', desc: 'Se establece un lenguaje común y una ética de trabajo profesionalizada.' },
-                  { title: 'Valor de Mercado', desc: 'Una empresa con procesos Foundation es un activo mucho más valioso.' },
-                ].map(({ title, desc }) => (
-                  <div key={title}>
-                    <h5 className="text-lg font-bold text-systemic-orange mb-2">{title}</h5>
-                    <p className="text-base text-white/70">{desc}</p>
-                  </div>
-                ))}
+            <AnimateOnScroll direction="up" delay={100} className="col-span-12 md:col-span-4">
+              <div className="h-full p-10 rounded-2xl border border-systemic-orange/20 flex flex-col justify-between" style={{ background: 'rgba(255,107,0,0.06)' }}>
+                <span className="material-symbols-outlined text-systemic-orange text-4xl mb-8">analytics</span>
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3">Métricas de Salud Organizacional</h3>
+                  <p className="text-sm text-white/60 leading-relaxed">Monitoreo constante del orden organizacional y la carga operativa en tiempo real.</p>
+                </div>
               </div>
-              <div className="mt-12">
-                <Link
-                  href="/contacto"
-                  className="liquid-glass-primary text-pure-white px-10 py-4 rounded-xl font-bold inline-flex items-center gap-3"
-                >
-                  Comenzar con Foundation
-                  <span className="material-symbols-outlined">arrow_forward</span>
-                </Link>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll direction="up" delay={150} className="col-span-12 md:col-span-4">
+              <div className="h-full p-10 rounded-2xl border border-white/10 hover:border-systemic-orange/40 transition-all" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                <span className="material-symbols-outlined text-systemic-orange text-4xl mb-8">rebase_edit</span>
+                <h3 className="text-xl font-semibold text-white mb-3">Manual de Procesos</h3>
+                <p className="text-sm text-white/60 leading-relaxed">Documentación viva que garantiza la repetibilidad y la excelencia operativa.</p>
               </div>
-            </div>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll direction="up" delay={200} className="col-span-12 md:col-span-8">
+              <div className="h-full p-10 rounded-2xl border border-white/10 hover:border-systemic-orange/40 transition-all flex items-center gap-8" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                <span className="material-symbols-outlined text-systemic-orange text-6xl shrink-0">device_hub</span>
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3">Sincronización Digital</h3>
+                  <p className="text-sm text-white/60 leading-relaxed">Integramos herramientas digitales con los procesos diseñados, garantizando que la tecnología amplifique la estructura, no la reemplace.</p>
+                </div>
+              </div>
+            </AnimateOnScroll>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      {/* 4. Rutinas — light cream */}
+      <section className="py-24 md:py-32" style={{ background: '#fbf9f8' }}>
+        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+          <AnimateOnScroll direction="up">
+            <div className="text-center mb-16">
+              <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Cadencia de Gestión</span>
+              <h2 className="text-4xl font-bold text-deep-navy mb-4">Rutinas que crean el ritmo de la empresa</h2>
+              <p className="text-base text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+                Implementamos ciclos de coordinación que aseguran que la estrategia baje a la ejecución sin fricciones.
+              </p>
+            </div>
+          </AnimateOnScroll>
+
+          <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-6" stagger={0.1}>
+            {rutinas.map(({ cadencia, icon, title, desc, items, accent }) => (
+              <StaggerItem key={cadencia}>
+                <MouseGlowCard className="rounded-2xl h-full">
+                  <div className="bg-white/92 p-8 rounded-[19px] border border-deep-navy/10 h-full group hover:border-systemic-orange/30 transition-all">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-systemic-orange/10 flex items-center justify-center group-hover:bg-systemic-orange transition-colors duration-300">
+                        <span className="material-symbols-outlined text-systemic-orange group-hover:text-white text-lg transition-colors duration-300">{icon}</span>
+                      </div>
+                      <span className={`text-xs font-black tracking-widest uppercase ${accent ? 'text-systemic-orange' : 'text-deep-navy'}`}>{cadencia}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-navy mb-3">{title}</h3>
+                    <p className="text-sm text-on-surface-variant leading-relaxed mb-6">{desc}</p>
+                    <ul className="space-y-2">
+                      {items.map((item) => (
+                        <li key={item} className="flex items-center gap-2 text-sm text-deep-navy font-medium">
+                          <div className="w-1.5 h-1.5 rounded-full bg-systemic-orange shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </MouseGlowCard>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </div>
+      </section>
+
+      {/* 5. Impacto — navy */}
+      <section className="py-24 md:py-32" style={{ background: NAVY_GRADIENT }}>
+        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+          <AnimateOnScroll direction="up">
+            <div className="text-center mb-16">
+              <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Resultados</span>
+              <h2 className="text-4xl font-semibold text-white">El Impacto Foundation</h2>
+            </div>
+          </AnimateOnScroll>
+
+          <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 gap-6" stagger={0.1}>
+            {impactos.map(({ icon, title, desc }) => (
+              <StaggerItem key={title}>
+                <div className="p-8 rounded-2xl border border-white/10 hover:border-systemic-orange/40 transition-all group" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                  <div className="w-12 h-12 rounded-xl bg-systemic-orange/10 flex items-center justify-center mb-5 group-hover:bg-systemic-orange transition-colors duration-300">
+                    <span className="material-symbols-outlined text-systemic-orange group-hover:text-white text-xl transition-colors duration-300">{icon}</span>
+                  </div>
+                  <h4 className="text-lg font-bold text-systemic-orange mb-2">{title}</h4>
+                  <p className="text-sm text-white/60 leading-relaxed">{desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </div>
+      </section>
+
+      {/* 6. CTA — naranja */}
+      <section className="py-24 overflow-hidden" style={{ background: ORANGE_GRADIENT }}>
+        <AnimateOnScroll direction="up">
+          <div className="max-w-[1280px] mx-auto px-6 md:px-12 text-center">
+            <h2 className="text-4xl font-semibold text-white mb-6">
+              ¿Listo para ordenar tu organización?
+            </h2>
+            <p className="text-base text-white/80 mb-10 max-w-xl mx-auto">
+              Foundation es el punto de partida. El diagnóstico inicial es sin costo.
+            </p>
+            <MagneticButton className="inline-block">
+              <Link
+                href="/contacto"
+                className="inline-flex items-center gap-3 bg-white text-systemic-orange px-12 py-5 rounded-xl font-bold text-sm hover:bg-deep-navy hover:text-white transition-all duration-300"
+              >
+                COMENZAR CON FOUNDATION
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </Link>
+            </MagneticButton>
+          </div>
+        </AnimateOnScroll>
+      </section>
+
     </PublicLayout>
   )
 }
