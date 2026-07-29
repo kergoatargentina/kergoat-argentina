@@ -196,7 +196,7 @@ export default function Impulso90Page() {
                   href="/contacto"
                   className="liquid-glass-primary w-full text-white py-4 font-bold text-sm flex items-center justify-center gap-2 rounded-xl"
                 >
-                  QUIERO ARRANCAR IMPULSO 90
+                  HABLEMOS DE IMPULSO 90
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </Link>
               </div>
@@ -221,7 +221,7 @@ export default function Impulso90Page() {
                 href="/contacto"
                 className="inline-flex items-center gap-3 bg-white text-systemic-orange px-12 py-5 rounded-xl font-bold text-sm hover:bg-deep-navy hover:text-white transition-all duration-300"
               >
-                HABLEMOS
+                HABLEMOS DE IMPULSO 90
                 <span className="material-symbols-outlined">arrow_forward</span>
               </Link>
             </MagneticButton>

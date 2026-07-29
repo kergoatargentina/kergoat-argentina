@@ -35,14 +35,8 @@ export default function CirculoVicioso() {
           from { stroke-dashoffset: 0; }
           to   { stroke-dashoffset: ${(-circumference).toFixed(1)}; }
         }
-        @keyframes spinArrows {
-          from { transform: rotate(0deg); }
-          to   { transform: rotate(360deg); }
-        }
-        .vc-ring     { animation: spinRing 26s linear infinite; }
-        .vc-arrows   { transform-box: view-box; transform-origin: 50% 50%; animation: spinArrows 26s linear infinite; }
-        .vc-wrapper:hover .vc-ring,
-        .vc-wrapper:hover .vc-arrows { animation-play-state: paused; }
+        .vc-ring { animation: spinRing 26s linear infinite; }
+        .vc-wrapper:hover .vc-ring { animation-play-state: paused; }
       `}</style>
 
       <svg
@@ -64,17 +58,15 @@ export default function CirculoVicioso() {
           className="vc-ring"
         />
 
-        {/* Rotating arrowheads */}
-        <g className="vc-arrows">
-          {[0, 90, 180, 270].map((a) => {
-            const { x, y } = pos(a, R)
-            return (
-              <g key={a} transform={`translate(${x},${y}) rotate(${a + 180})`}>
-                <polygon points="0,-6 4.5,3 -4.5,3" fill="#FF6B00" opacity="0.75" />
-              </g>
-            )
-          })}
-        </g>
+        {/* Static clockwise arrowheads between nodes */}
+        {[45, 135, 225, 315].map((a) => {
+          const { x, y } = pos(a, R)
+          return (
+            <g key={a} transform={`translate(${x},${y}) rotate(${a + 90})`}>
+              <path d="M -6,-7 L 6,0 L -6,7" stroke="#FF6B00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.85" />
+            </g>
+          )
+        })}
 
         {/* Dashed connector lines center → nodes */}
         {nodes.map(({ angle }, i) => {

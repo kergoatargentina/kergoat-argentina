@@ -270,7 +270,7 @@ export default function FoundationPage() {
                 href="/contacto"
                 className="inline-flex items-center gap-3 bg-white text-systemic-orange px-12 py-5 rounded-xl font-bold text-sm hover:bg-deep-navy hover:text-white transition-all duration-300"
               >
-                COMENZAR CON FOUNDATION
+                HABLEMOS DE FOUNDATION
                 <span className="material-symbols-outlined">arrow_forward</span>
               </Link>
             </MagneticButton>
