@@ -184,6 +184,7 @@ export default function MetodoPage() {
 
             {/* Evolución 360 */}
             <StaggerItem>
+              <Link href="/metodo/evolucion-360" className="block h-full group">
               <div className="p-8 rounded-2xl flex flex-col justify-between gap-6 relative overflow-hidden h-full" style={{ background: 'rgba(255,107,0,0.14)', border: '1px solid rgba(255,107,0,0.35)' }}>
                 <div className="pointer-events-none absolute -right-8 -top-8 w-40 h-40 rounded-full" style={{ background: 'rgba(255,107,0,0.2)', filter: 'blur(40px)' }} />
                 <div className="absolute -right-3 -top-3 text-[88px] font-black leading-none select-none pointer-events-none" style={{ color: 'rgba(255,255,255,0.06)' }}>06</div>
@@ -197,11 +198,13 @@ export default function MetodoPage() {
                   <h2 className="text-xl font-black text-white mb-1">Evolución 360</h2>
                   <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: 'rgba(255,255,255,0.5)' }}>Salud Sistémica Recurrente</p>
                   <p className="text-sm text-white/75 leading-relaxed">Su empresa evoluciona trimestralmente sin volver al desorden. Salud sistémica recurrente con dirección, indicadores y liderazgo activo.</p>
+                  <div className="flex items-center gap-2 text-white font-bold text-xs mt-8 relative z-10 uppercase tracking-widest group-hover:gap-4 transition-all duration-300">
+                    Ver programa
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </div>
                 </div>
-                <Link href="/contacto" className="relative z-10 text-center px-6 py-3 rounded-xl font-black text-sm tracking-widest uppercase transition-all duration-300 text-deep-navy hover:text-white" style={{ background: 'rgba(255,255,255,0.92)' }}>
-                  Agendar Asesoría
-                </Link>
               </div>
+              </Link>
             </StaggerItem>
           </StaggerGroup>
         </div>
