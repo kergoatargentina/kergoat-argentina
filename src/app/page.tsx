@@ -282,7 +282,7 @@ export default function HomePage() {
             <MagneticButton className="inline-block">
               <Link
                 href="/contacto"
-                className="inline-flex items-center gap-3 bg-white text-systemic-orange px-12 py-5 font-bold text-sm hover:bg-deep-navy hover:text-white transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-white text-systemic-orange px-12 py-5 rounded-xl font-bold text-sm hover:bg-deep-navy hover:text-white transition-all duration-300"
               >
                 HABLEMOS
                 <span className="material-symbols-outlined">arrow_forward</span>

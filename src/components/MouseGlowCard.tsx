@@ -13,7 +13,7 @@ export default function MouseGlowCard({
   children,
   className = '',
   circleSize = 380,
-  gradient = 'linear-gradient(135deg, #0B124A, #1a3580, #FF6B00, #ff8c2a)',
+  gradient = 'linear-gradient(135deg, #ffd97d, #FF6B00, #e55e00)',
 }: Props) {
   const [mouse, setMouse] = useState<{ x: number | null; y: number | null }>({ x: null, y: null })
   const ref = useRef<HTMLDivElement>(null)
