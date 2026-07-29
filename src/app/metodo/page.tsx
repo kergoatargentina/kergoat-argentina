@@ -31,7 +31,7 @@ const programas = [
     title: 'Growth',
     sub: 'Profesionalización y Gobernanza',
     desc: 'Liderazgo estructurado para el crecimiento sostenido. Gobernanza y estructura corporativa para crecer sin romperse.',
-    href: null,
+    href: '/metodo/growth',
     icon: 'trending_up',
   },
   {
@@ -39,7 +39,7 @@ const programas = [
     title: 'Corporate',
     sub: 'Integración Sistémica',
     desc: 'Transformación integral para organizaciones complejas. Intervención sistémica para corporaciones en plena expansión.',
-    href: null,
+    href: '/metodo/corporate',
     icon: 'corporate_fare',
   },
   {
@@ -47,7 +47,7 @@ const programas = [
     title: 'International',
     sub: 'Expansión Global',
     desc: 'Arquitectura corporativa para el éxito en nuevos mercados. Estructura, cultura y liderazgo para operar en el exterior.',
-    href: null,
+    href: '/metodo/international',
     icon: 'public',
   },
 ]

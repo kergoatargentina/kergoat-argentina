@@ -40,7 +40,7 @@ export default function CirculoVicioso() {
           to   { transform: rotate(360deg); }
         }
         .vc-ring     { animation: spinRing 26s linear infinite; }
-        .vc-arrows   { transform-origin: ${CX}px ${CY}px; animation: spinArrows 26s linear infinite; }
+        .vc-arrows   { transform-box: view-box; transform-origin: 50% 50%; animation: spinArrows 26s linear infinite; }
         .vc-wrapper:hover .vc-ring,
         .vc-wrapper:hover .vc-arrows { animation-play-state: paused; }
       `}</style>
