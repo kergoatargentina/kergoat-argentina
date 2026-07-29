@@ -25,7 +25,7 @@ export default function Navbar() {
           <Image src="/logo-blanco.svg" alt="Kergoat Argentina" width={225} height={99} priority />
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 rounded-full px-8 py-2.5" style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)' }}>
           {links.map(({ href, label }) => {
             const active = pathname === href || (href === '/metodo' && pathname.startsWith('/metodo'))
             return (

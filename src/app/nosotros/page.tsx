@@ -196,7 +196,6 @@ export default function NosotrosPage() {
         </div>
         <AnimateOnScroll direction="up">
           <div className="max-w-[1280px] mx-auto px-6 md:px-12 text-center relative z-10">
-            <span className="text-systemic-orange text-5xl font-black block mb-6">"</span>
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight max-w-4xl mx-auto leading-tight">
               Analizamos tus objetivos,{' '}
               <span className="text-systemic-orange">alcanzamos tu éxito.</span>
