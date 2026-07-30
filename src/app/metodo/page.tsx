@@ -139,10 +139,10 @@ export default function MetodoPage() {
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
           <AnimateOnScroll direction="up">
             <div className="mb-16">
-              <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Los 6 Niveles</span>
+              <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Los 6 Programas</span>
               <h2 className="text-4xl font-bold text-white mb-4">Un programa para cada etapa de tu empresa</h2>
               <p className="text-base max-w-2xl" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                Cada nivel está diseñado para el momento exacto de madurez de tu organización.
+                Cada programa está diseñado para el momento exacto de madurez de tu organización.
               </p>
             </div>
           </AnimateOnScroll>
@@ -293,18 +293,27 @@ export default function MetodoPage() {
         <AnimateOnScroll direction="up">
           <div className="max-w-[1280px] mx-auto px-6 md:px-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Descubrí el programa adecuado para la madurez de tu empresa
+              ¿No sabés cuál programa es para tu empresa?
             </h2>
             <p className="text-base text-white/80 mb-10 max-w-lg mx-auto">
-              El diagnóstico inicial es sin costo. Un consultor Kergoat te orienta en 48hs.
+              Respondé 6 preguntas y te recomendamos el programa exacto para el momento de tu organización.
             </p>
-            <Link
-              href="/contacto"
-              className="inline-flex items-center gap-3 bg-white text-systemic-orange px-12 py-5 rounded-xl font-bold text-sm hover:bg-deep-navy hover:text-white transition-all duration-300"
-            >
-              HABLEMOS
-              <span className="material-symbols-outlined">arrow_forward</span>
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/diagnostico"
+                className="inline-flex items-center gap-3 bg-white text-systemic-orange px-12 py-5 rounded-xl font-bold text-sm hover:bg-deep-navy hover:text-white transition-all duration-300"
+              >
+                <span className="material-symbols-outlined">quiz</span>
+                HACÉ LA ENCUESTA
+              </Link>
+              <Link
+                href="/contacto"
+                className="inline-flex items-center gap-3 border-2 border-white/60 text-white px-10 py-5 rounded-xl font-bold text-sm hover:border-white hover:bg-white/10 transition-all duration-300"
+              >
+                HABLEMOS DIRECTAMENTE
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </Link>
+            </div>
           </div>
         </AnimateOnScroll>
       </section>

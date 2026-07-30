@@ -10,6 +10,27 @@ export const metadata = {
   title: 'Nosotros | Kergoat Argentina',
 }
 
+const engranajes = [
+  {
+    num: '01',
+    title: 'Productividad y Resultados',
+    desc: 'Activamos el potencial operativo de cada área para generar resultados concretos y medibles de negocio.',
+    icon: 'manage_accounts',
+  },
+  {
+    num: '02',
+    title: 'Ordenamiento Organizacional',
+    desc: 'Diseñamos la estructura que permite a tu empresa funcionar sin depender de una sola persona.',
+    icon: 'schema',
+  },
+  {
+    num: '03',
+    title: 'Conducción y Coordinación',
+    desc: 'Implementamos sistemas que permiten liderar, comunicar y anticipar — saliendo definitivamente de la reactividad.',
+    icon: 'settings',
+  },
+]
+
 const pilares = [
   'Estrategia y definición clara del rumbo empresarial.',
   'Estructura organizacional, comercial y operativa eficiente.',
@@ -189,7 +210,47 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* 5. Banner cita — dark navy */}
+      {/* 5. Los 3 Engranajes — dark navy */}
+      <section className="py-24 md:py-32" style={{ background: NAVY_GRADIENT }}>
+        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+          <AnimateOnScroll direction="up">
+            <div className="text-center mb-16">
+              <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Intervención Integral</span>
+              <h2 className="text-4xl font-semibold text-white mb-6">Intervenimos donde su empresa más lo necesita</h2>
+              <p className="text-base text-white/60 leading-relaxed max-w-3xl mx-auto">
+                Un engranaje aislado no mueve la máquina. Nuestro abordaje es siempre estructural — integrando estrategia, cultura y capital humano.
+              </p>
+            </div>
+          </AnimateOnScroll>
+
+          <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6" stagger={0.12}>
+            {engranajes.map(({ num, icon, title, desc }) => (
+              <StaggerItem key={title}>
+                <div className="p-8 rounded-2xl border border-white/10 hover:border-systemic-orange/40 transition-all h-full relative overflow-hidden" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                  <div className="absolute top-4 right-4 text-5xl font-black text-white/4">{num}</div>
+                  <span className="material-symbols-outlined text-systemic-orange text-4xl mb-6 block">{icon}</span>
+                  <h3 className="text-xl font-semibold text-white mb-4">Engranaje {num} — {title}</h3>
+                  <p className="text-sm text-white/60 leading-relaxed">{desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+
+          <AnimateOnScroll direction="up" delay={300}>
+            <div className="p-8 rounded-2xl border border-systemic-orange/30 hover:border-systemic-orange/50 transition-all flex flex-col md:flex-row items-center gap-6" style={{ background: 'rgba(255,255,255,0.04)' }}>
+              <div className="w-12 h-12 rounded-xl bg-systemic-orange/15 flex items-center justify-center shrink-0">
+                <span className="material-symbols-outlined text-systemic-orange text-2xl">hub</span>
+              </div>
+              <div>
+                <p className="text-systemic-orange font-black tracking-widest text-xs uppercase mb-2">Intervención Integral — Sistema Kergoat</p>
+                <p className="text-white/70 text-sm leading-relaxed">Sistemas que permiten conducir, liderar, comunicar y anticipar. Equipos verdaderamente coordinados con articulación fluida entre niveles jerárquicos.</p>
+              </div>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* 7. Banner cita — dark navy */}
       <section className="py-20 relative overflow-hidden" style={{ background: NAVY_GRADIENT }}>
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <div className="w-[800px] h-[300px] rounded-full" style={{ background: 'rgba(255,107,0,0.07)', filter: 'blur(80px)' }} />

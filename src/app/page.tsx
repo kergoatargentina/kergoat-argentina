@@ -188,54 +188,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Los 3 Engranajes — navy */}
-      <section className="py-24 md:py-32" style={{ background: NAVY_GRADIENT }}>
-        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
-          <AnimateOnScroll direction="up">
-            <div className="text-center mb-16">
-              <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Intervención Integral</span>
-              <h2 className="text-4xl font-semibold text-white mb-6">Intervenimos donde su empresa más lo necesita</h2>
-              <p className="text-base text-white/60 leading-relaxed max-w-3xl mx-auto">
-                Un engranaje aislado no mueve la máquina. Nuestro abordaje es siempre estructural — integrando estrategia, cultura y capital humano.
-              </p>
-            </div>
-          </AnimateOnScroll>
-
-          <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" stagger={0.12}>
-            {engranajes.map(({ num, icon, title, desc }) => (
-              <StaggerItem key={title}>
-                <div className="p-8 rounded-2xl border border-white/10 hover:border-systemic-orange/40 transition-all h-full relative overflow-hidden" style={{ background: 'rgba(255,255,255,0.04)' }}>
-                  <div className="absolute top-4 right-4 text-5xl font-black text-white/4">{num}</div>
-                  <span className="material-symbols-outlined text-systemic-orange text-4xl mb-6 block">{icon}</span>
-                  <h3 className="text-xl font-semibold text-white mb-4">Engranaje {num} — {title}</h3>
-                  <p className="text-sm text-white/60 leading-relaxed">{desc}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
-
-          <AnimateOnScroll direction="up">
-            <div className="border-2 border-systemic-orange/60 rounded-xl p-8 text-center">
-              <div className="w-3 h-3 bg-systemic-orange rounded-full animate-pulse mx-auto mb-4" />
-              <p className="text-systemic-orange font-black tracking-[0.2em] text-lg uppercase">
-                Intervención Integral — Sistema Kergoat
-                <span className="block text-white/80 mt-2 font-normal text-base tracking-normal normal-case">
-                  Sistemas que permiten conducir, liderar, comunicar y anticipar. Equipos verdaderamente coordinados con articulación fluida entre niveles jerárquicos.
-                </span>
-              </p>
-            </div>
-          </AnimateOnScroll>
-        </div>
-      </section>
-
-      {/* Sistema Kergoat — 6 programas */}
+      {/* Los 6 programas */}
       <section className="py-24 md:py-32" style={{ background: '#fbf9f8' }}>
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
           <AnimateOnScroll direction="up">
             <div className="text-center mb-16 max-w-3xl mx-auto">
               <span className="text-xs font-bold tracking-widest text-systemic-orange uppercase block mb-4">Sistema Kergoat</span>
               <h2 className="text-4xl font-semibold text-deep-navy mb-6">
-                6 niveles de transformación para cada etapa de madurez organizacional
+                6 programas de transformación para cada etapa de madurez organizacional
               </h2>
               <p className="text-base text-on-surface-variant leading-relaxed">
                 Facilitamos la evolución empresarial desde un enfoque sistémico. Cada programa está diseñado para el momento exacto de tu empresa.
@@ -264,9 +224,13 @@ export default function HomePage() {
           </StaggerGroup>
 
           <AnimateOnScroll direction="up" delay={200}>
-            <div className="text-center">
-              <Link href="/metodo" className="inline-flex items-center gap-2 text-systemic-orange font-bold hover:underline">
-                Descubrí el programa adecuado para tu empresa
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-2">
+              <Link href="/diagnostico" className="inline-flex items-center gap-2 bg-deep-navy text-white px-8 py-4 rounded-xl font-bold text-sm hover:bg-systemic-orange transition-all duration-300">
+                <span className="material-symbols-outlined text-base">quiz</span>
+                Respondé la encuesta y descubrí tu programa
+              </Link>
+              <Link href="/metodo" className="inline-flex items-center gap-2 text-systemic-orange font-bold text-sm hover:underline">
+                Ver todos los programas
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
               </Link>
             </div>
